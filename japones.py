@@ -41,7 +41,7 @@ root.geometry("300x200+0+{}" .format(root.winfo_screenheight() - 280))
 root.configure(bg="black")
 root.title("Letreiro de LED")
 
-label = tk.Label(root, text="", font=("Arial", 24))
+label = tk.Label(root, text="", font=("Arial", 200))
 label.configure(bg="black", fg="green")
 label.place(relx=0.5, rely=0.5, anchor="center")
 
@@ -56,8 +56,13 @@ def update_label():
         time.sleep(1)
         index = (index + 1) % len(japanese_letters)
 
+root.attributes("-fullscreen", True)
+
 # Iniciar a atualização do rótulo
 update_label()
+
+
+
 
 # Iniciar a janela principal
 root.mainloop()
